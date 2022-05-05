@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <script src="script.js"></script>
+    <title>Cadastramento</title>
+</head>
+<body>
+   <div>
+       <form method="post" id="formulario"> 
+           <div>
+               <label for="nome" >Nome:</label>
+               <input type="text" id="nome" name="usuario_nome" />
+           </div>
+           <div>
+            <label for="nome" >Cpf:</label>
+            <input type="number" id="cpf" name="usuario_cpf"/>
+           <div>
+               <label for="email">E-mail:</label>
+               <input type="email" id="email" name="usuario_email"/>
+           </div>
+           <div>
+               <label for="telefone">Telefone:</label>
+               <input type="number" id="telefone" name="usuario_telefone" />
+           </div>
+           <div>
+               <label for="dataNascimento"> Data de Nascimento: </label>
+               <input type="date" value="" name="usuario_dataNascimento" />
+            </div>
+           <button id="bEnviar" type="submit">Enviar</button>
+       </form>
+
+   </div>
+   
+</body>
+</html>

@@ -32,13 +32,29 @@ label{
     text-align: right;
 }
 input{
-    font: 15px sans-serif;
+    font: 15px sans-serif white;
     width: 300px;
     height: 30px;
     box-sizing: border-box;
     border: 1px solid #999;
     border-radius: 10px;
+    
+    
+
 }
 input:focus{
-    border-color: #000;
+
+}
+input:out-of-range{
+    border: 1px solid red;
+}input:valid:required{
+    border: 1px solid green;
+    background-image: linear-gradient(to right, rgba(79, 163, 79, 0.425) , white);
+}input:invalid:required{
+    background-image: linear-gradient(to right, rgba(226, 120, 120, 0.384),rgba(101, 207, 101, 0.349));
+}
+
+span{
+    color: red;
+    font-size: 12px;
 }

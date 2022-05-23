@@ -7,14 +7,13 @@ app.get("/",(req,res)=>{
     res.send("Enviado!");
 });
 
-http.createServer(app).listen(port,()=>{
-    console.log(`SERVIDOR RODANDO NA PORTA ${port}`);
-});
+app.get("/formulario",(req,res)=>{
+    res.sendFile()
+})
 
 
 
 
-
-/*app.listen(port, () =>{
+app.listen(port, () =>{
     console.log(`Server rodando na porta ${port}/`);
-});*/
+});

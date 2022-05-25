@@ -7,8 +7,10 @@ app.get("/",(req,res)=>{
     res.send("Enviado!");
 });
 
-app.get("/formulario",(req,res)=>{
-    res.sendFile()
+app.get("/formulario/:nome",(req,res)=>{
+    res.sendFile(__dirname + "/index.html")
+    
+    
 })
 
 

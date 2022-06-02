@@ -9,7 +9,8 @@ app.get("/",(req,res)=>{
 
 app.get("/formulario/:nome",(req,res)=>{
     res.sendFile(__dirname + "/index.html")
-    
+    //res, serve para mandar algo
+    //senFile, para carregar algum arquivo html
     
 })
 
@@ -19,3 +20,4 @@ app.get("/formulario/:nome",(req,res)=>{
 app.listen(port, () =>{
     console.log(`Server rodando na porta ${port}/`);
 });
+//fazer o servidor ficar online         

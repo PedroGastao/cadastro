@@ -4,7 +4,7 @@ const sequelize = new Sequelize("sistemadecadastro", "root", "Kuahku10#", {
     host:"localhost",
     dialect:"mysql"
 })
-//no primeiro parametro é o nome do banco de dados, o segundo o nome de usuario, o terceiro a senha no quarto
+//no primeiro parametro é o nome do banco de dados, o segundo o nome de usuario, o terceiro a senha do db
 //a localização do banco e qual banco
 
 sequelize.authenticate().then(function(){

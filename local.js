@@ -26,6 +26,10 @@ app.get("/formulario", function(req,res){
     res.render("formulario")//chamando a pagina formulario do handlebars
 })
 
+app.post("/dados", function(req,res){
+    res.send("Enviado")
+})// rota de recebimento dos dados do formulario
+
 
 
 app.listen(port, () =>{

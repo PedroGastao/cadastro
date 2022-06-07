@@ -18,10 +18,13 @@ sequelize.authenticate().then(function(){
 
 
 //template engine
-app.engine("handlebars", handlebars({defaultLayout: "main"}))
+app.engine("handlebars", handlebars.engine({defaultLayout: "main"}))
 app.set("view engine", "handlebars")
 
 
+app.get("/formulario", function(req,res){
+    res.render("formulario")//chamando a pagina formulario do handlebars
+})
 
 
 

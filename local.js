@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const handlebars = require("express-handlebars") 
+const bodyParser = require('body-parser')
 const Sequelize = require('sequelize') //banco de dados
 const sequelize = new Sequelize("sistemadecadastro", "root", "Kuahku10#", {
     host:"localhost",
@@ -16,6 +17,9 @@ sequelize.authenticate().then(function(){
     console.log("falha ao conectar :" + erro)
 })//then e catch serve para quando de certo ou errado
 
+//body parser
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 //template engine
 app.engine("handlebars", handlebars.engine({defaultLayout: "main"}))

@@ -22,6 +22,10 @@ app.get("/formulario", function(req,res){
     res.render("formulario")//chamando a pagina formulario do handlebars
 })
 
+app.get("/enviado", function(req,res){
+    res.render("enviado")
+})
+
 app.post("/dados",function(req,res){
     cadastro.create({
         nome: req.body.usuario_nome,
@@ -30,11 +34,11 @@ app.post("/dados",function(req,res){
         telefone: req.body.usuario_telefone,
         nascimento: req.body.usuario_dataNascimento
     }).then(function(){
-        res.send("Dados Enviados com Sucesso!")
+        res.redirect("/enviado") //redireciona a pagina
     }).catch(function(erro){
         res.send("Falha ao Enviar Dados!! " + erro)
     })
-})
+})// enviando os dados do formulario
 
 
 

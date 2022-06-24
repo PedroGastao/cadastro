@@ -18,4 +18,5 @@ const infoCad = bancoDados.sequelize.define("cadastro", {
     }
 })
 
+module.exports = infoCad
 //infoCad.sync({force: true})

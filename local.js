@@ -4,14 +4,10 @@ const app = express();
 const port = 3000;
 const handlebars = require("express-handlebars") 
 const bodyParser = require('body-parser')
-
+const cadastro = require("./modules/infoCad")
 
 //a localização do banco e qual banco
-sequelize.authenticate().then(function(){
-    console.log("conectado ao Banco de dados!")
-}).catch(function(erro){
-    console.log("falha ao conectar :" + erro)
-})//then e catch serve para quando de certo ou errado
+
 
 //body parser
 app.use(bodyParser.urlencoded({extended: false}))
@@ -26,9 +22,19 @@ app.get("/formulario", function(req,res){
     res.render("formulario")//chamando a pagina formulario do handlebars
 })
 
-app.post("/dados", function(req,res){
-    res.send("Enviado")
-})// rota de recebimento dos dados do formulario
+app.post("/dados",function(req,res){
+    cadastro.create({
+        nome: req.body.usuario_nome,
+        cpf: req.body.usuario_cpf,
+        email: req.body.usuario_email,
+        telefone: req.body.usuario_telefone,
+        nascimento: req.body.usuario_dataNascimento
+    }).then(function(){
+        res.send("Dados Enviados com Sucesso!")
+    }).catch(function(erro){
+        res.send("Falha ao Enviar Dados!! " + erro)
+    })
+})
 
 
 

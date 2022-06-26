@@ -23,7 +23,9 @@ app.get("/formulario", function(req,res){
 })
 
 app.get("/enviado", function(req,res){
-    res.render("enviado")
+    cadastro.findAll().then(function(dados){
+        res.render("enviado", {Dados: dados})
+    })
 })
 
 app.post("/dados",function(req,res){

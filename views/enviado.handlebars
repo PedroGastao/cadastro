@@ -1,13 +1,14 @@
 <h1>ENVIADO COM SUCESSO!</h1>
 
 {{#each Dados}}
-<ul>
-<ol>{{nome}}</ol>
+
+{{nome}}
 {{cpf}}
 {{email}}
 {{telefone}}
 {{nascimento}}
+<a href="/delete/{{id}}"><button>Deletar</button></a>
 <hr>
-</ul>
+
 
 {{/each}}

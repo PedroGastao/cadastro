@@ -6,9 +6,6 @@ const handlebars = require("express-handlebars")
 const bodyParser = require('body-parser')
 const cadastro = require("./modules/infoCad")
 
-//a localização do banco e qual banco
-
-
 //body parser
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -42,7 +39,13 @@ app.post("/dados",function(req,res){
     })
 })// enviando os dados do formulario
 
-
+app.get("/delete/:id", function(req,res){
+    cadastro.destroy({where: {"id": req.params.id}}).then(function(){
+        res.send("Cadastro Apagado!")
+    }).catch(function(erro){
+        res.send("Erro ao apagar cadastro! " + erro)
+    })
+})// deletar um cadastro
 
 app.listen(port, () =>{
     console.log(`Server rodando na porta ${port}/`);
